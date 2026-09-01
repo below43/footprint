@@ -4,6 +4,7 @@ import { WorkspaceColorRegistry } from "./color/registry";
 import { getOverride, removeOverride, setOverride } from "./overrides";
 import { applyStatusBarTheme } from "./themeManager";
 import { foregroundFor, hexToRgb } from "./color/oklch";
+import { STATUS_BAR_TEXT } from "./statusBar";
 
 let status:vscode.StatusBarItem;
 let registry:WorkspaceColorRegistry;
@@ -38,7 +39,7 @@ async function refresh(context:vscode.ExtensionContext):Promise<void>{
   const color=override??automatic.hex;
   const foreground=override?foregroundFor(hexToRgb(override)):automatic.foreground;
 
-  status.text="$(circle-filled) Footprint";
+  status.text=STATUS_BAR_TEXT;
   status.tooltip=`${vscode.workspace.name??"Workspace"}\nWorkspace color: ${color}\nClick to change`;
   status.show();
 
