@@ -1,0 +1,9 @@
+**/*.ts
+**/*.map
+**/test/**
+**/.github/**
+**/.vscode/**
+tsconfig.json
+tsconfig.test.json
+.gitignore
+SUPPORT.md
