@@ -1,12 +1,22 @@
 # Footprint
 
-## Automatic visual identity for VS Code workspaces.
+## Automatic status bar identity for VS Code workspaces.
 
-Footprint gives every VS Code workspace its own colour — automatically.
+Footprint gives every VS Code workspace its own colour automatically.
 
-When you have several projects open at once, it is surprisingly easy to end up in the wrong window. Footprint gives each workspace a distinctive, deterministic colour so you can identify it at a glance.
+When you have several projects open at once, it is easy to lose track of which window belongs to which project. Footprint gives each workspace a distinctive, deterministic status bar colour so you can identify it at a glance.
 
 **No setup. No project files.**
+
+### In use
+
+Different directories get different stable status bar colours:
+
+![Three VS Code workspaces with different Footprint status bar colours](images/readme-workspaces.png)
+
+The interface stays intentionally small:
+
+![Footprint status bar menu showing Automatic and Custom options](images/readme-menu.png)
 
 ### How it works
 
@@ -14,7 +24,7 @@ Footprint derives a stable identity from the workspace location and uses it to s
 
 The same workspace gets the same colour every time:
 
-**same workspace → same colour, every time**
+**Same workspace, same colour, every time.**
 
 Different workspaces are assigned colours independently, so opening or closing another workspace never changes an existing workspace's colour.
 
@@ -29,15 +39,9 @@ Click **● Footprint** in the VS Code Status Bar:
 
 When a custom colour is active, **Custom…** opens the current colour so you can edit it. Select **Automatic** to return to the generated colour.
 
-That's the whole interface.
-
 ### Why Footprint?
 
-If you regularly have several VS Code windows open, you know the question:
-
-> Which project is this again?
-
-Footprint gives each workspace a visual identity so you can know at a glance.
+If you regularly work across several VS Code windows, Footprint makes it easier to recognize the one you want without adding project-specific setup or extra UI.
 
 ### Features
 
