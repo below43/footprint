@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import { normalize } from "./normalize";
 
 export function getWorkspaceIdentity(): string | undefined {
   const workspaceFile = vscode.workspace.workspaceFile;
@@ -8,8 +9,4 @@ export function getWorkspaceIdentity(): string | undefined {
   if (!folders?.length) return undefined;
 
   return folders.map(folder => normalize(folder.uri.toString())).sort().join("|");
-}
-
-export function normalize(value: string): string {
-  return value.trim().replace(/\\/g, "/").toLowerCase();
 }

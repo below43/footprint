@@ -1,7 +1,7 @@
 import * as assert from "node:assert";
 import { generateCandidates } from "../src/color/generator";
 import { WorkspaceColorRegistry } from "../src/color/registry";
-import { normalize } from "../src/workspaceIdentity";
+import { normalize } from "../src/normalize";
 
 describe("Footprint", () => {
   it("generates deterministic colors", () => {
