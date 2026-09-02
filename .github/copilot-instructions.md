@@ -18,7 +18,7 @@ Do not use:
 
 The Status Bar should show only:
 
-`● Footprint`
+`layout-panel` icon.
 
 Clicking it opens exactly:
 - ✓ Automatic
