@@ -38,7 +38,7 @@ async function refresh(context:vscode.ExtensionContext):Promise<void>{
   const color=override??automatic.hex;
   const foreground=override?foregroundFor(hexToRgb(override)):automatic.foreground;
 
-  status.text="$(circle-filled) Footprint";
+  status.text="$(layout-panel)";
   status.tooltip=`${vscode.workspace.name??"Workspace"}\nWorkspace color: ${color}\nClick to change`;
   status.show();
 
