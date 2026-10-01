@@ -47,6 +47,8 @@ Only manage:
 - `statusBar.background`
 - `statusBar.foreground`
 - `statusBarItem.hoverBackground`
+- `statusBar.debuggingBackground`
+- `statusBar.debuggingForeground`
 
 Do not manage window borders.
 
