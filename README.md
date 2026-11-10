@@ -61,10 +61,16 @@ If you regularly work across several VS Code windows, Footprint makes it easier 
 
 - Automatic deterministic workspace colors
 - Custom workspace colors
+- Choose Status Bar or Title Bar as the color target
 - Perceptual color selection
 - No project configuration required
 - No external services
 - VS Code only
+
+### Settings
+
+- `footprint.enableStatusBarColor` - enable or disable Footprint color theming
+- `footprint.colorTarget` - choose `statusBar` (default) or `titleBar`
 
 ### Privacy
 
@@ -75,6 +81,42 @@ Footprint generates colors locally from workspace identity. It does not send wor
 Footprint is a Waka Apps project by Andrew Drake.
 
 [waka.nz](https://waka.nz)
+
+## Build and test
+
+Prerequisite:
+
+- Node.js and npm installed
+
+From the project root:
+
+```bash
+npm install
+npm run compile
+npm test
+```
+
+Useful scripts:
+
+- `npm run compile` - compile extension source into `dist/`
+- `npm test` - compile tests into `dist-test/` and run Mocha
+- `npm run watch` - recompile on file changes
+
+## Packaging for distribution
+
+Create a VSIX package from the project root:
+
+```bash
+npm run package
+```
+
+This runs `npm run compile` and then `vsce package`, producing a `.vsix` file in the project root (for example, `footprint-1.1.4.vsix`).
+
+Optional checks before packaging:
+
+```bash
+npm test
+```
 
 ## License
 

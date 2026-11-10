@@ -2,7 +2,7 @@
 	"name": "footprint",
 	"displayName": "Footprint",
 	"description": "Automatic visual identity for VS Code workspaces.",
-	"version": "1.1.4",
+	"version": "1.2.1",
 	"publisher": "waka",
 	"repository": {
 		"type": "git",
@@ -49,7 +49,20 @@
 				"footprint.enableStatusBarColor": {
 					"type": "boolean",
 					"default": true,
-					"description": "Apply the Footprint color to the VS Code Status Bar."
+					"description": "Apply the Footprint color to the selected UI target."
+				},
+				"footprint.colorTarget": {
+					"type": "string",
+					"default": "statusBar",
+					"enum": [
+						"statusBar",
+						"titleBar"
+					],
+					"markdownEnumDescriptions": [
+						"Apply the Footprint color to the Status Bar.",
+						"Apply the Footprint color to the Title Bar."
+					],
+					"description": "Choose where Footprint applies workspace colors."
 				}
 			}
 		}
