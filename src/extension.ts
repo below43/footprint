@@ -2,7 +2,7 @@ import * as vscode from "vscode";
 import { getWorkspaceIdentity } from "./workspaceIdentity";
 import { WorkspaceColorRegistry } from "./color/registry";
 import { getOverride, removeOverride, setOverride } from "./overrides";
-import { applyStatusBarTheme } from "./themeManager";
+import { applyWorkspaceTheme, type ColorTarget } from "./themeManager";
 import { foregroundFor, hexToRgb } from "./color/oklch";
 
 let status:vscode.StatusBarItem;
@@ -43,8 +43,16 @@ async function refresh(context:vscode.ExtensionContext):Promise<void>{
   status.show();
 
   if(vscode.workspace.getConfiguration("footprint").get<boolean>("enableStatusBarColor",true)){
-    await applyStatusBarTheme(context,color,foreground);
+    const target = getColorTarget();
+    await applyWorkspaceTheme(context,color,foreground,target);
   }
+}
+
+function getColorTarget(): ColorTarget {
+  const value = vscode.workspace
+    .getConfiguration("footprint")
+    .get<string>("colorTarget", "statusBar");
+  return value === "titleBar" ? "titleBar" : "statusBar";
 }
 
 async function workspaceMenu(
