@@ -76,6 +76,11 @@ async function workspaceMenu(
       detail: override
         ? "Edit your current custom color"
         : "Set a custom workspace color"
+    },
+    {
+      label: "Settings…",
+      description: "Open Footprint settings",
+      detail: "Configure target and behavior"
     }
   ];
 
@@ -89,7 +94,16 @@ async function workspaceMenu(
     await useAutomatic(context);
   } else if (pick.label.includes("Custom")) {
     await setCustomColor(context);
+  } else if (pick.label.includes("Settings")) {
+    await openSettings();
   }
+}
+
+async function openSettings(): Promise<void> {
+  await vscode.commands.executeCommand(
+    "workbench.action.openSettings",
+    "@ext:waka.footprint"
+  );
 }
 
 async function setCustomColor(context:vscode.ExtensionContext):Promise<void>{

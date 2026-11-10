@@ -118,6 +118,38 @@ Optional checks before packaging:
 npm test
 ```
 
+## Local testing checklist
+
+Test in an Extension Development Host:
+
+1. Compile the extension:
+
+```bash
+npm run compile
+```
+
+2. Press `F5` in VS Code to open an Extension Development Host window.
+3. In that window, open a folder or workspace and set `footprint.colorTarget` to `titleBar`.
+4. Confirm only the title bar is colored.
+5. Change `footprint.colorTarget` to `statusBar` and confirm only the status bar is colored.
+
+Fast iteration while editing:
+
+```bash
+npm run watch
+```
+
+Then run `Developer: Reload Window` in the Extension Development Host after code changes.
+
+Test the packaged extension exactly as users install it:
+
+```bash
+npm run package
+code --install-extension footprint-<version>.vsix
+```
+
+Reload VS Code and verify the same behavior in a normal window.
+
 ## License
 
 MIT
