@@ -2,7 +2,7 @@
 	"name": "footprint",
 	"displayName": "Footprint",
 	"description": "Automatic visual identity for VS Code workspaces.",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"publisher": "waka",
 	"repository": {
 		"type": "git",
